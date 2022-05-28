@@ -18,9 +18,7 @@ async function getAllSinger() {
     i.onclick = function (e) {
       slugItem = i.userData;
       setCookie("slug", slugItem, 2);
-      console.log(slugItem);
-      // e.preventDefault();
-      window.location.href = "../views/songs.html";
+      window.location.href = "./views/songs.html";
     };
   });
 }
