@@ -1,6 +1,6 @@
 //loading
 const textureLoader = new THREE.TextureLoader();
-const normalTextureLoader = textureLoader.load("/img/NormalMap.png");
+const normalTextureLoader = textureLoader.load("../public/img/NormalMap.png");
 
 // Debug
 // const gui = new dat.GUI();
