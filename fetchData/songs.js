@@ -1,10 +1,23 @@
 const songsWrap = $(".songs-wrap");
 
+var click = 0;
+
 async function getAllSong(slug) {
   const resp = await fetch("http://localhost:3000/songs/" + slug);
   const respData = await resp.json(); //trả data dạng json được chuyển thành JS
   respData.forEach((item) => {
     showAllSong(item);
+  });
+  const heartIcons = document.querySelectorAll(".song-fav");
+  heartIcons.forEach((i) => {
+    i.onclick = (e) => {
+      if (click % 2 === 0) {
+        i.style.color = "red";
+      } else {
+        i.style.color = "#ccc";
+      }
+      click++;
+    };
   });
 }
 
