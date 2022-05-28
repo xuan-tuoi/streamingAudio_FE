@@ -30,7 +30,7 @@ function showAllSong(data) {
                         <p class="song-title">${data.name}</p>
                         <p class="singers">${data.description}</p>
                         <audio id="youtube" controls>
-                            <source src="../${data.songURL}" />
+                            <source src="../public/${data.songURL}" />
                         </audio>
                         <i class="fa-solid fa-heart song-fav"></i>
   `;
