@@ -17,7 +17,7 @@ var swiperComment = new Swiper(".review__content", {
 });
 
 async function getAllComment() {
-  const resp = await fetch("http://localhost:3000/comment");
+  const resp = await fetch("https://audiostreaming.glitch.me/comment");
   const respData = await resp.json(); //trả data dạng json được chuyển thành JS
   // const randomMeal = respData.meals[0];
   console.log(respData);

@@ -3,7 +3,7 @@ const songsWrap = $(".songs-wrap");
 var click = 0;
 
 async function getAllSong(slug) {
-  const resp = await fetch("http://localhost:3000/songs/" + slug);
+  const resp = await fetch("https://audiostreaming.glitch.me/songs/" + slug);
   const respData = await resp.json(); //trả data dạng json được chuyển thành JS
   respData.forEach((item) => {
     showAllSong(item);

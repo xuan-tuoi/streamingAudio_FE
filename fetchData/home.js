@@ -7,7 +7,7 @@ var slugsItem = []; // lưu các giá trị của slug
 var slugItem; // lấy ra cái slug mà user click vào
 
 async function getAllSinger() {
-  const resp = await fetch("http://localhost:3000/");
+  const resp = await fetch("https://audiostreaming.glitch.me/");
   const respData = await resp.json(); //trả data dạng json được chuyển thành JS
   respData.forEach((item) => {
     showAllSinger(item);
