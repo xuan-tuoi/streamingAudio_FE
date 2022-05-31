@@ -199,6 +199,111 @@ body {
   color: #cccccc;
   cursor: pointer;
 }
+.song-item .item-wrap .song-comment {
+  font-size: 1.4rem;
+  color: #cccccc;
+  cursor: pointer;
+  position: absolute;
+  right: -12%;
+  top: 42%;
+}
+
+.song-modal {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease-in;
+}
+.song-modal .layer {
+  position: absolute;
+  background-color: rgba(35, 36, 38, 0.77);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.song-modal .song-wrap_comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 12px;
+}
+.song-modal .song_comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+.song-modal .song_comment-header h1 {
+  font-size: 20px;
+  padding-right: 390px;
+}
+.song-modal .song_comment-header .comment-closeBtn {
+  cursor: pointer;
+}
+.song-modal .line {
+  width: 100%;
+  height: 2px;
+  background: black;
+  margin-bottom: 20px;
+}
+.song-modal .list-comments {
+  width: 100%;
+}
+.song-modal .list-comments .comment-item {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 12px;
+}
+.song-modal .list-comments .comment-item .comment-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+.song-modal .list-comments .comment-item div h3 {
+  font-size: 18px;
+}
+.song-modal .list-comments .comment-item div p {
+  font-size: 12px;
+}
+.song-modal .comment-input {
+  outline: none;
+  width: 100%;
+  border: none;
+  padding: 10px 12px;
+  background: none;
+  color: black;
+  border-bottom: 1px solid black;
+}
+.song-modal .comment-submit {
+  cursor: pointer;
+  color: #3f3f3f;
+  position: absolute;
+  top: 63%;
+  font-size: 20px;
+  right: 35%;
+}
+
+.song-modal.active {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
 
 .detailLayer {
   position: absolute;
