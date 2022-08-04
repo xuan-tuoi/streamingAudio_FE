@@ -4,6 +4,18 @@ var imageInp = $(".review__image");
 var reviewCommentInp = $(".review__textarea");
 var button = $(".review__btn");
 
+const componentCloseBtn = document.querySelector(".close-btn");
+const componentLayer = document.querySelector(".component_layer");
+const barIcon = document.querySelector(".bar-icon");
+
+componentCloseBtn.onclick = (e) => {
+  componentLayer.classList.remove("active");
+};
+
+barIcon.onclick = (e) => {
+  componentLayer.classList.add("active");
+};
+
 var swiperComment = new Swiper(".review__content", {
   loop: true,
   autoplay: {
@@ -48,7 +60,7 @@ function storeComment() {
   const content = reviewCommentInp.val();
 
   $.post(
-    "http://localhost:3000/comment/store",
+    "https://audiostreaming.glitch.me/comment/store",
     { user: user, image: image, content: content },
     function (data) {
       if ("thanh cong") {

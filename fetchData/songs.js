@@ -1,6 +1,16 @@
 const songsWrap = $(".song-wrap");
-
+const componentCloseBtn = document.querySelector(".close-btn");
+const componentLayer = document.querySelector(".component_layer");
+const barIcon = document.querySelector(".bar-icon");
 var click = 0;
+
+componentCloseBtn.onclick = (e) => {
+  componentLayer.classList.remove("active");
+};
+
+barIcon.onclick = (e) => {
+  componentLayer.classList.add("active");
+};
 
 async function getAllSong(slug) {
   const resp = await fetch("https://audiostreaming.glitch.me/songs/" + slug);
@@ -73,14 +83,16 @@ function showAllSong(data) {
         </div>
       </div>
       <img src="${data.image}" alt="" />
-                    <div class="item-wrap">
-                        <p class="song-title">${data.name}</p>
-                        <p class="singers">${data.description}</p>
-                        <audio id="youtube" controls>
-                            <source src="../public/${data.songURL}" />
-                        </audio>
-                        <i class="fa-solid fa-heart song-fav"></i>
-                        <i class="fa-solid fa-comment song-comment"></i>
+      <div class="item-wrap">
+          <p class="song-title">${data.name}</p>
+          <p class="singers">${data.description}</p>
+          <audio id="youtube" controls>
+              <source src="../public/${data.songURL}" />
+          </audio>
+          <i class="fa-solid fa-heart song-fav"></i>
+          <i class="fa-solid fa-comment song-comment"></i>
+        </div>
+        
   `;
   songsWrap.append(contentItem);
 }

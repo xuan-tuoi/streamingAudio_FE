@@ -6,21 +6,83 @@
     height: $dai;
 }
 
+$active-color: #3dd2ad;
+
 body {
     font-family: 'Poppins', sans-serif;
     background: rgb(24, 24, 24);
     color: #fff;
+    margin: 0;
     user-select: none;
 }
 
-
-
-.navbar {
-    padding: 2rem 1rem 5rem 1rem;
+.app {
+    position: relative;
 }
 
-.container {
-    padding-left: 0;
+.background_gradient {
+    position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background-image: linear-gradient(to left bottom, #143743, #0e6469, #35947f, #7cc284, #d7ec85);
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+}
+
+
+//Header
+
+.nav-container {
+    padding: 20px 140px 5rem 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav_block-item {
+        a {
+            margin-right: 0.2rem;
+                color: white;
+                font-weight: 600;
+                font-size: 1.6rem;
+                text-decoration: none;
+        }
+        span {
+            color: #e25757;
+                font-size: 1.6rem;
+                font-weight: 700;
+        }
+    }
+    .nav-list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+            .nav-item {
+                .nav-link {
+                    text-decoration: none;
+                     padding: 0 1rem;
+                     color: #b7b7b7;
+                     font-size: 1.2rem;
+                     transition: all 0.2s linear;
+                     &:hover {
+                        transform: translate(4px, -3px);
+                     }
+
+                }
+                .nav-link.active{
+                    color: $active-color;
+                }
+            }
+    } 
+}
+
+// Body 
+
+.body-container {
+    padding: 0 140px;
 
     .navbar-brand {
         margin-right: 0.2rem;
@@ -45,7 +107,7 @@ body {
              }
          }
          .nav-link.active {
-            color: #3dd2ad;
+            color: $active-color;
         }
 
     }
@@ -229,6 +291,15 @@ body {
     }
 }
 
+.songs_bar-icon {
+    display: none;
+    font-size: 30px;
+}
+
+.songs_layer {
+    display: none;
+}
+
 .song-modal {
         // display: flex;
         align-items: center;
@@ -368,4 +439,245 @@ background-image: linear-gradient(to left bottom, #143743, #0e6469, #35947f, #7c
 
 .comment-content {
     
+}
+
+.component_layer {
+    display: none;
+}
+
+// Responsive 
+
+//Mobile
+@media only screen and (max-width:540px){
+
+    .background_gradient {
+        @include rong-dai(100%, 100%)
+    }
+
+    //header
+    .nav-container {
+        padding: 20px;
+        .nav-list {
+            display: none;
+        }
+        i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+    .body-container {
+        padding: 20px;
+        .home-container {
+            flex-direction: column;
+            .search-container {
+                input{
+                    width: 314px;
+                }
+                // .singer-list {
+                //     .singer-img {
+                //         @include rong-dai(120px, 100px);
+                //     }
+                // }
+            }
+            .content-list {
+                .content-item {
+                    margin-bottom: 24px;
+                    .content-img {
+                            @include rong-dai(120px, 100px);
+                        }
+                    
+                        .content-desc {
+                            padding-right: 20px;
+                            h1 {
+                                font-size: 1.5rem;
+                            }
+                            p {
+                                font-size: 12px;
+                            }
+                        }
+                }
+            }
+        }
+        //List song 
+       .song-item {
+        flex-direction: column;
+        align-items : center;
+        width: 360px;
+        img {
+            border-radius: 10px;
+            margin-top: 10px;
+            width: 340px;
+        }
+        .item-wrap {
+            padding-left: 0;
+            .song-title {
+                font-size: 1.2rem;
+            }
+            .singers {
+                margin: 6px 0;
+            }
+            #youtube {
+                width: 320px;
+                padding-bottom: 8px;
+            }
+            .song-fav {
+                right: 0%;
+                    top: 14%;
+            }
+            .song-comment {
+                right: 0%;
+                    top: 38%;
+            }
+        }
+       }
+
+       //details section
+       .detailLayer {
+        width: 100%;
+       }
+       .detailContainer {
+        flex-direction: column;
+        .detailItem {
+            h1 {
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+            p{
+                font-size: 0.8rem;
+                    font-weight: 100;
+            }
+        }
+       }
+
+       //Review section
+       .review {
+        &::after {
+
+        }
+        &__wrap {
+            flex-direction: column;
+            .review__input {
+                @include rong-dai(360px, 400px);
+                padding: 20px;
+                margin: 0;
+                h1 {
+                    margin: 0;
+                }
+                .review__form {
+                    width: 320px;
+                }
+            }
+            .review__content {
+                width: 360px;
+                padding-top: 40px;
+                margin: 0;
+                .review__item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    &::before {
+                        @include rong-dai(0,0)
+                    }
+                }
+
+                .review__img {
+                    @include rong-dai(140px, 140px);
+                    border-radius: 50%;
+                }
+                h1 {
+                    margin: 12px 0;
+                    width: 100%;
+                    text-align: center;
+                }
+                p {
+                    margin: 0;
+                    text-align: center;
+                }
+                span{
+                    font-size: 12px;
+                }
+            }
+        }
+       }
+    }
+   
+    .songs_bar-icon {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .component_layer{
+        .transulecent_layer {
+            width:100vw;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            position: absolute;
+        }
+        .component_layer-wrap {
+            position: fixed;
+                height: 100vh;
+                top: 0;
+                z-index: 2;
+                right: 0;
+                text-align: center;
+                width: 130px;
+                background-color: #fff;
+                padding: 60px 24px;
+                i {
+                    cursor: pointer;
+                }
+            .component_layer-item {
+                padding-bottom: 12px;
+                .component_layer-link {
+                    color: #000;
+                    text-decoration: none;
+                    transition: all 0.2s linear;
+                        &:hover {
+                            transform: translate(4px, -3px);
+                        }
+                }
+                .component_layer-link.active {
+                    color: $active-color;
+                }
+            }
+            .close-btn {
+                color: #000;
+                position: absolute;
+                    right: 7px;
+                        top: 10px;
+                    font-size: 20px;
+                    padding: 12px;
+            }
+            
+        }
+        
+    }
+    .component_layer.active {
+        display: block;
+    }
+}
+
+//tablet
+@media only screen and (min-width:540px) and (max-width: 768px) {
+
+}
+
+//laptop
+@media only screen and (min-width:768px) and (max-width: 1280px){
+    .bar-icon {
+        display: none;
+    }
+}
+
+//pc
+@media only screen and (min-width:1280px) {
+    .bar-icon {
+        display: none;
+    }
 }

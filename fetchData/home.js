@@ -3,6 +3,19 @@ const $$ = document.querySelectorAll.bind(document);
 
 const contentList = $(".content-list");
 
+//
+const componentCloseBtn = document.querySelector(".close-btn");
+const componentLayer = document.querySelector(".component_layer");
+const barIcon = document.querySelector(".bar-icon");
+
+componentCloseBtn.onclick = (e) => {
+  componentLayer.classList.remove("active");
+};
+
+barIcon.onclick = (e) => {
+  componentLayer.classList.add("active");
+};
+
 var slugsItem = []; // lưu các giá trị của slug
 var slugItem; // lấy ra cái slug mà user click vào
 
