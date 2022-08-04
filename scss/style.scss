@@ -423,6 +423,9 @@ background-image: linear-gradient(to left bottom, #143743, #0e6469, #35947f, #7c
         p{
             margin: 24px 0;
         }
+        .player-frame {
+            @include rong-dai(400px, 400px);
+        }
     }
 }
 
@@ -448,7 +451,7 @@ background-image: linear-gradient(to left bottom, #143743, #0e6469, #35947f, #7c
 // Responsive 
 
 //Mobile
-@media only screen and (max-width:540px){
+@media only screen and (max-width:600px){
 
     .background_gradient {
         @include rong-dai(100%, 100%)
@@ -664,12 +667,101 @@ background-image: linear-gradient(to left bottom, #143743, #0e6469, #35947f, #7c
 }
 
 //tablet
-@media only screen and (min-width:540px) and (max-width: 768px) {
+@media only screen and (min-width:600px) and (max-width: 820px) {
+    //heading 
+    .nav-container {
+        padding: 36px;
+    }
 
+    .body-container {
+        padding: 60px 36px;
+        .home-container {
+            .content-list {
+                margin-left: 20px;
+                .content-item {
+                    img {
+                        @include rong-dai(180px, 130px);
+                    }
+                    .content-desc {
+                        padding : 16px 0px 16px 20px ;
+                        h1 {
+                            font-size: 1.6rem;
+                        }
+                        p{
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+            }
+        }
+        .detailItem {
+            h1 {
+                font-size: 26px;
+            }
+            .player-frame {
+                @include rong-dai(320px,320px);
+            }
+        }
+
+        .review {
+            .review__wrap {
+                .review__input {
+                    @include rong-dai(360px, 440px);
+                    margin-right: 20px;
+                    h1 {
+                        margin: 0 0 10px 0;
+                    }
+                    .review__form {
+                        width: 320px;
+                    }
+                }
+                .review__content {
+                    .review__img {
+                        @include rong-dai(260px, 280px)
+                    }
+                    h1 {
+                        margin: 10px 0;
+                    }
+                    p{
+                        margin: 8px 0;
+                    }
+                    .swiper-pagination {
+
+                    }
+                }
+            }
+        }
+
+        .song-wrap {
+            .song-item {
+                width: 710px;
+                img {
+                    @include rong-dai(220px, 180px)
+                }
+                .item-wrap {
+                    padding-left: 24px;
+                    .song-title {
+                        margin-top: 0;
+                    }
+                    .singers {
+                        margin: 6px 0;
+                    }
+                    #youtube{
+                        width: 400px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .bar-icon {
+        display: none;
+    }
 }
 
 //laptop
-@media only screen and (min-width:768px) and (max-width: 1280px){
+@media only screen and (min-width:820px) {
     .bar-icon {
         display: none;
     }
